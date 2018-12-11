@@ -9,11 +9,16 @@ query_dict = {}
 response={}
 
 query_dict['query1'] = q1.body
-query_dict['Spec_GW'] =q2.body
-query_dict['match_all'] =q3.body
+query_dict['Spec_GW'] = q2.body
+query_dict['match_all'] = q3.body
 indexToquery="lora-device_packet-deduplication"
 doc_typeToQuery='device_packet'
-size=50 #max is 10000
+size=50 #max is 500000
+# --- settings changed in the index 'lora-device_packet-deduplication'
+#with PUT lora-device_packet-deduplication/_settings
+# {
+#   "max_result_window" : 500000
+# }
 
 
 
@@ -31,10 +36,13 @@ def scanDoc():
         GW_id = str(field['_source']['gateway'])
         Dev_id = str(field['_source']['uid'])
         Dev_eui = str(field['_source']['dev_eui'])
+        freq = str(field['_source']['freq'])
+        sizePkt=str(field['_source']['size'])
+        datr = str(field['_source']['datr'])
+        typePKT = str(field['_source']['type'])
 
     #Prints to the screen the output
         #print "DEV ID: %s - DEV_EUI: %s " % (field['_id'], field['_source']['dev_eui'])
-
         try:
             addToDict(response, GW_id, Dev_id)
         except KeyError, e:
@@ -45,9 +53,10 @@ def scanDoc():
 def easyToRead(file_name):
     with open(file_name, 'w') as file:
         for k,v in response.items():
-            file.write("GW ID: %s,\n DEV ID: %s \n" % (k,v))
-            print "done!"
+            #file.write("GW: %s,\n DEV ID: %s \n" % (k,v))
+            #print "done!"
             print "Values of key: %s are: %i " % (k, len(response[k]))
+    file.close()
 
 def checkResult():
     return 0
@@ -58,7 +67,6 @@ def main():
     scanDoc()
     easyToRead("easyreadable.txt")
     checkResult()
-
 
 
 
