@@ -22,29 +22,45 @@ def queryDB():
     jsonTostring=json.dumps(res, indent=4, separators=(',',':'))
     return res
 
-def addToDict(response, key, value):
-    response[key].append(value)
+def addToDict(dict, key, value):
+    dict[key].append(value)
 
-returnedQuery=queryDB()
-for field in returnedQuery['hits']['hits']:
-    GW_id = str(field['_source']['gateway'])
-    Dev_id = str(field['_source']['uid'])
-    Dev_eui = str(field['_source']['dev_eui'])
+def scanDoc():
+    returnedQuery=queryDB()
+    for field in returnedQuery['hits']['hits']:
+        GW_id = str(field['_source']['gateway'])
+        Dev_id = str(field['_source']['uid'])
+        Dev_eui = str(field['_source']['dev_eui'])
 
-    #Print to the screen the output
-    #print "DEV ID: %s - DEV_EUI: %s " % (field['_id'], field['_source']['dev_eui'])
+    #Prints to the screen the output
+        #print "DEV ID: %s - DEV_EUI: %s " % (field['_id'], field['_source']['dev_eui'])
 
-    try:
-        addToDict(response, GW_id, Dev_id)
-    except KeyError, e:
-        response[GW_id] = [Dev_id]
-        #print repr(e)
+        try:
+            addToDict(response, GW_id, Dev_id)
+        except KeyError, e:
+            response[GW_id] = [Dev_id]
+            #print repr(e)
 
 #write out on a file in order to have a easy readable result
-with open('easyreadable.txt', 'w') as easyread:
-    for k,v in response.items():
-        easyread.write("GW ID: %s,\n DEV ID: %s \n" % (k,v))
-        print "done!"
+def easyToRead(file_name):
+    with open(file_name, 'w') as file:
+        for k,v in response.items():
+            file.write("GW ID: %s,\n DEV ID: %s \n" % (k,v))
+            print "done!"
+            print "Values of key: %s are: %i " % (k, len(response[k]))
 
-    #return the number o items in the list associated with the key k
-        print len(response[k])
+def checkResult():
+    return 0
+
+
+def main():
+
+    scanDoc()
+    easyToRead("easyreadable.txt")
+    checkResult()
+
+
+
+
+if __name__== "__main__":
+  main()
