@@ -1,0 +1,33 @@
+GATEWAY_PACKET
+{
+  "_index": "lora-gateway_packet-pull_resp",
+  "_type": "gateway_packet",
+  "_id": "pc8YkmcBP-vbFVU112xo",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "protocol": 2,
+    "token": "eaad",
+    "cmd": 3,
+    "freq": 869.5,
+    "datr": "SF12BW125",
+    "tmst": 1204920020,
+    "rfch": 0,
+    "powe": 14,
+    "modu": "LORA",
+    "codr": "4/5",
+    "ipol": true,
+    "size": 13,
+    "data": "YPwGEeAApowK/Saazw==",
+    "gw_mac": "7276FF002E0616C0",
+    "created_at": "2018-12-09T08:32:40.803Z"
+  },
+  "fields": {
+    "created_at": [
+      "2018-12-09T08:32:40.803Z"
+    ]
+  },
+  "sort": [
+    1544344360803
+  ]
+}

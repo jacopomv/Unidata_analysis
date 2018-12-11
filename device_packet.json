@@ -1,0 +1,57 @@
+DEVICE_PACKET
+{
+  "_index": "lora-device_packet-deduplication",
+  "_type": "device_packet",
+  "_id": "Rc2AkWcBP-vbFVU1klEn",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "tmst": 1172134171,
+    "chan": 0,
+    "rfch": 1,
+    "freq": 868.1,
+    "stat": 1,
+    "modu": "LORA",
+    "datr": "SF7BW125",
+    "codr": "4/5",
+    "lsnr": 10,
+    "rssi": -99,
+    "size": 29,
+    "gateway": "58A0CBEFFE014E4C",
+    "ns_time": 1544334381390,
+    "phyPayload": "QPsGEeCAPkwFmo5X5FMUbMN79+Jfp1rq5/eLx9Y=",
+    "mac_payload": {
+      "type": "Unconfirmed Data Up",
+      "PHYPayload": "40FB0611E0803E4C059A8E57E453146CC37BF7E25FA75AEAE7F78BC7D6",
+      "MHDR": "40",
+      "MACPayload": "FB0611E0803E4C059A8E57E453146CC37BF7E25FA75AEAE7",
+      "MIC": "F78BC7D6",
+      "FHDR": "FB0611E0803E4C",
+      "FPort": "05",
+      "FRMPayload": "9A8E57E453146CC37BF7E25FA75AEAE7",
+      "DevAddr": "E01106FB",
+      "FCtrl": "80",
+      "FCnt": 19518,
+      "FOpts": "",
+      "Direction": "up",
+      "ACK": false,
+      "ADR": true
+    },
+    "uid": "f997cdef-2230-4057-a2f7-694f571d6ebb",
+    "dev_addr": "E01106FB",
+    "dev_eui": "A81758FFFE0306FB",
+    "type": "Unconfirmed Data Up",
+    "error": "mic_success",
+    "created_at": "2018-12-09T05:46:21.601Z",
+    "decrypted_payload": "ibvNtAwy+okMPmG5OxGJKA==",
+    "parsed_payload": null
+  },
+  "fields": {
+    "created_at": [
+      "2018-12-09T05:46:21.601Z"
+    ]
+  },
+  "sort": [
+    1544334381601
+  ]
+}
