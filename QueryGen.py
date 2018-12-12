@@ -3,26 +3,21 @@ class Query:
         self.name = name
         self.body = body
 
-q1 = Query("query", {
+q1 = Query("query_GWToSF", {
   "query": {
     "bool": {
     "must": [
       {
         "match": {
-          "gateway": "7276FF002E0616C0"
+          "gateway": "1C497BEFFECAB36D"
 
         }
       },
       {
         "match": {
-          "dev_eui": "0018B24000000186"
+          "datr": "SF7BW125"
         }
       },
-      {
-        "match": {
-          "size": "23"
-        }
-      }
     ]
     }
   }
@@ -30,7 +25,7 @@ q1 = Query("query", {
 q2 = Query("Spec_GW", {
   "query":{
     "match":{
-      "gateway":"7276FF002E0616C0"
+      "gateway":"7276FF002E0616FD"
     }
   }
 })

@@ -1,0 +1,59 @@
+GW: 1C497BEFFECAB36D
+ Total size query: 50000 
+Values for the key: SF10BW125 are: 6091 , percentage of packets is: 12.18% 
+Values for the key: SF8BW125 are: 200 , percentage of packets is: 0.40% 
+Values for the key: SF7BW125 are: 22129 , percentage of packets is: 44.26% 
+Values for the key: SF12BW125 are: 21147 , percentage of packets is: 42.29% 
+Values for the key: SF9BW125 are: 166 , percentage of packets is: 0.33% 
+Values for the key: SF11BW125 are: 267 , percentage of packets is: 0.53% 
+GW: 1C497BEFFECAB36D
+ Total size query: 50000 
+Values for the key: SF10BW125 are: 6091 , percentage of packets is: 12.18% 
+Values for the key: SF8BW125 are: 200 , percentage of packets is: 0.40% 
+Values for the key: SF7BW125 are: 22129 , percentage of packets is: 44.26% 
+Values for the key: SF12BW125 are: 21147 , percentage of packets is: 42.29% 
+Values for the key: SF9BW125 are: 166 , percentage of packets is: 0.33% 
+Values for the key: SF11BW125 are: 267 , percentage of packets is: 0.53% 
+GW: 1C497BEFFECAB36D
+ Total size query: 100000 
+Values for the key: SF10BW125 are: 12552 , percentage of packets is: 12.55% 
+Values for the key: SF8BW125 are: 348 , percentage of packets is: 0.35% 
+Values for the key: SF7BW125 are: 45105 , percentage of packets is: 45.11% 
+Values for the key: SF12BW125 are: 41166 , percentage of packets is: 41.17% 
+Values for the key: SF9BW125 are: 289 , percentage of packets is: 0.29% 
+Values for the key: SF11BW125 are: 540 , percentage of packets is: 0.54% 
+GW: 1C497BEFFECAB36D
+ Total size query: 150000 
+Values for the key: SF10BW125 are: 12973 , percentage of packets is: 8.65% 
+Values for the key: SF8BW125 are: 350 , percentage of packets is: 0.23% 
+Values for the key: SF7BW125 are: 45170 , percentage of packets is: 30.11% 
+Values for the key: SF12BW125 are: 41431 , percentage of packets is: 27.62% 
+Values for the key: SF9BW125 are: 292 , percentage of packets is: 0.19% 
+Values for the key: SF11BW125 are: 544 , percentage of packets is: 0.36% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 50000 
+Values for the key: SF10BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF8BW125 are: 1 , percentage of packets is: 0.00% 
+Values for the key: SF7BW125 are: 1 , percentage of packets is: 0.00% 
+Values for the key: SF12BW125 are: 49992 , percentage of packets is: 99.98% 
+Values for the key: SF9BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF11BW125 are: 2 , percentage of packets is: 0.00% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+Values for the key: SF10BW125 are: 3 , percentage of packets is: 0.00% 
+Values for the key: SF8BW125 are: 1 , percentage of packets is: 0.00% 
+Values for the key: SF7BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF12BW125 are: 92551 , percentage of packets is: 92.55% 
+Values for the key: SF9BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF11BW125 are: 2 , percentage of packets is: 0.00% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 150000 
+Values for the key: SF10BW125 are: 3 , percentage of packets is: 0.00% 
+Values for the key: SF8BW125 are: 1 , percentage of packets is: 0.00% 
+Values for the key: SF7BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF12BW125 are: 92551 , percentage of packets is: 61.70% 
+Values for the key: SF9BW125 are: 2 , percentage of packets is: 0.00% 
+Values for the key: SF11BW125 are: 2 , percentage of packets is: 0.00% 
