@@ -1,0 +1,117 @@
+
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 50000 
+Values for the key: 13 are: 155 , percentage of packets is: 0.31% 
+Values for the key: 14 are: 69 , percentage of packets is: 0.14% 
+Values for the key: 15 are: 537 , percentage of packets is: 1.07% 
+Values for the key: 17 are: 111 , percentage of packets is: 0.22% 
+Values for the key: 18 are: 136 , percentage of packets is: 0.27% 
+Values for the key: 19 are: 61 , percentage of packets is: 0.12% 
+Values for the key: 20 are: 9 , percentage of packets is: 0.02% 
+Values for the key: 21 are: 2811 , percentage of packets is: 5.62% 
+Values for the key: 22 are: 98 , percentage of packets is: 0.20% 
+Values for the key: 23 are: 11407 , percentage of packets is: 22.81% 
+Values for the key: 24 are: 1979 , percentage of packets is: 3.96% 
+Values for the key: 25 are: 787 , percentage of packets is: 1.57% 
+Values for the key: 26 are: 16220 , percentage of packets is: 32.44% 
+Values for the key: 27 are: 1 , percentage of packets is: 0.00% 
+Values for the key: 28 are: 2421 , percentage of packets is: 4.84% 
+Values for the key: 29 are: 9748 , percentage of packets is: 19.50% 
+Values for the key: 30 are: 12 , percentage of packets is: 0.02% 
+Values for the key: 31 are: 1168 , percentage of packets is: 2.34% 
+Values for the key: 32 are: 5 , percentage of packets is: 0.01% 
+Values for the key: 34 are: 2035 , percentage of packets is: 4.07% 
+Values for the key: 36 are: 93 , percentage of packets is: 0.19% 
+Values for the key: 38 are: 1 , percentage of packets is: 0.00% 
+Values for the key: 42 are: 3 , percentage of packets is: 0.01% 
+Values for the key: 49 are: 89 , percentage of packets is: 0.18% 
+Values for the key: 64 are: 44 , percentage of packets is: 0.09% 
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+Values for the key: 13 are: 330 , percentage of packets is: 0.33% 
+Values for the key: 14 are: 138 , percentage of packets is: 0.14% 
+Values for the key: 15 are: 1097 , percentage of packets is: 1.10% 
+Values for the key: 17 are: 214 , percentage of packets is: 0.21% 
+Values for the key: 18 are: 286 , percentage of packets is: 0.29% 
+Values for the key: 19 are: 114 , percentage of packets is: 0.11% 
+Values for the key: 20 are: 15 , percentage of packets is: 0.01% 
+Values for the key: 21 are: 5707 , percentage of packets is: 5.71% 
+Values for the key: 22 are: 196 , percentage of packets is: 0.20% 
+Values for the key: 23 are: 22388 , percentage of packets is: 22.39% 
+Values for the key: 24 are: 3851 , percentage of packets is: 3.85% 
+Values for the key: 25 are: 1597 , percentage of packets is: 1.60% 
+Values for the key: 26 are: 33142 , percentage of packets is: 33.14% 
+Values for the key: 27 are: 3 , percentage of packets is: 0.00% 
+Values for the key: 28 are: 4793 , percentage of packets is: 4.79% 
+Values for the key: 29 are: 18833 , percentage of packets is: 18.83% 
+Values for the key: 30 are: 22 , percentage of packets is: 0.02% 
+Values for the key: 31 are: 2356 , percentage of packets is: 2.36% 
+Values for the key: 32 are: 13 , percentage of packets is: 0.01% 
+Values for the key: 34 are: 4471 , percentage of packets is: 4.47% 
+Values for the key: 35 are: 2 , percentage of packets is: 0.00% 
+Values for the key: 36 are: 172 , percentage of packets is: 0.17% 
+Values for the key: 38 are: 1 , percentage of packets is: 0.00% 
+Values for the key: 42 are: 11 , percentage of packets is: 0.01% 
+Values for the key: 49 are: 168 , percentage of packets is: 0.17% 
+Values for the key: 64 are: 80 , percentage of packets is: 0.08% 
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 150000 
+Values for the key: 13 are: 330 , percentage of packets is: 0.22% 
+Values for the key: 14 are: 139 , percentage of packets is: 0.09% 
+Values for the key: 15 are: 1097 , percentage of packets is: 0.73% 
+Values for the key: 17 are: 214 , percentage of packets is: 0.14% 
+Values for the key: 18 are: 286 , percentage of packets is: 0.19% 
+Values for the key: 19 are: 115 , percentage of packets is: 0.08% 
+Values for the key: 20 are: 15 , percentage of packets is: 0.01% 
+Values for the key: 21 are: 5791 , percentage of packets is: 3.86% 
+Values for the key: 22 are: 198 , percentage of packets is: 0.13% 
+Values for the key: 23 are: 22539 , percentage of packets is: 15.03% 
+Values for the key: 24 are: 3886 , percentage of packets is: 2.59% 
+Values for the key: 25 are: 1611 , percentage of packets is: 1.07% 
+Values for the key: 26 are: 33536 , percentage of packets is: 22.36% 
+Values for the key: 27 are: 3 , percentage of packets is: 0.00% 
+Values for the key: 28 are: 4793 , percentage of packets is: 3.20% 
+Values for the key: 29 are: 18841 , percentage of packets is: 12.56% 
+Values for the key: 30 are: 22 , percentage of packets is: 0.01% 
+Values for the key: 31 are: 2356 , percentage of packets is: 1.57% 
+Values for the key: 32 are: 13 , percentage of packets is: 0.01% 
+Values for the key: 34 are: 4540 , percentage of packets is: 3.03% 
+Values for the key: 35 are: 2 , percentage of packets is: 0.00% 
+Values for the key: 36 are: 172 , percentage of packets is: 0.11% 
+Values for the key: 38 are: 1 , percentage of packets is: 0.00% 
+Values for the key: 42 are: 11 , percentage of packets is: 0.01% 
+Values for the key: 49 are: 168 , percentage of packets is: 0.11% 
+Values for the key: 64 are: 81 , percentage of packets is: 0.05% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 50000 
+Values for the key: 17 are: 6 , percentage of packets is: 0.01% 
+Values for the key: 19 are: 304 , percentage of packets is: 0.61% 
+Values for the key: 23 are: 44363 , percentage of packets is: 88.73% 
+Values for the key: 24 are: 37 , percentage of packets is: 0.07% 
+Values for the key: 27 are: 5234 , percentage of packets is: 10.47% 
+Values for the key: 35 are: 56 , percentage of packets is: 0.11% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+Values for the key: 17 are: 9 , percentage of packets is: 0.01% 
+Values for the key: 19 are: 554 , percentage of packets is: 0.55% 
+Values for the key: 23 are: 82725 , percentage of packets is: 82.73% 
+Values for the key: 24 are: 77 , percentage of packets is: 0.08% 
+Values for the key: 27 are: 9350 , percentage of packets is: 9.35% 
+Values for the key: 35 are: 89 , percentage of packets is: 0.09% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 150000 
+Values for the key: 17 are: 9 , percentage of packets is: 0.01% 
+Values for the key: 19 are: 554 , percentage of packets is: 0.37% 
+Values for the key: 23 are: 82725 , percentage of packets is: 55.15% 
+Values for the key: 24 are: 77 , percentage of packets is: 0.05% 
+Values for the key: 27 are: 9350 , percentage of packets is: 6.23% 
+Values for the key: 35 are: 89 , percentage of packets is: 0.06% 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 50 
