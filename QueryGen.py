@@ -9,13 +9,13 @@ q1 = Query("query_GWToSF", {
     "must": [
       {
         "match": {
-          "gateway": "1C497BEFFECAB36D"
+          "gateway": "7276FF002E0616FD"
 
         }
       },
       {
         "match": {
-          "datr": "SF7BW125"
+          "datr": "SF12BW125"
         }
       },
     ]
@@ -25,7 +25,7 @@ q1 = Query("query_GWToSF", {
 q2 = Query("Spec_GW", {
   "query":{
     "match":{
-      "gateway":"7276FF002E0616FD"
+      "gateway":"1C497BEFFECAB36D"
     }
   }
 })

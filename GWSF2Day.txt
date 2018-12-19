@@ -1,0 +1,137 @@
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF7BW125
+Pkts for the day: 1 are: 18 	
+Pkts for the day: 2 are: 14 	
+Pkts for the day: 3 are: 13 	
+Pkts for the day: 4 are: 14 	
+Pkts for the day: 5 are: 531 	
+Pkts for the day: 6 are: 18 	
+Pkts for the day: 7 are: 194 	
+Pkts for the day: 8 are: 330 	
+Pkts for the day: 9 are: 297 	
+Pkts for the day: 10 are: 1 	
+Pkts for the day: 12 are: 366 	
+Pkts for the day: 13 are: 7 	
+Pkts for the day: 14 are: 602 	
+Day average: 185  
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF8BW125
+Pkts for the day: 1 are: 5 	
+Pkts for the day: 2 are: 4 	
+Pkts for the day: 5 are: 3 	
+Pkts for the day: 6 are: 9 	
+Pkts for the day: 8 are: 2 	
+Pkts for the day: 12 are: 1 	
+Day average: 4  
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF9BW125
+Pkts for the day: 1 are: 13 	
+Pkts for the day: 2 are: 4 	
+Pkts for the day: 3 are: 7 	
+Day average: 8  
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF10BW125
+Pkts for the day: 1 are: 1443 	
+Pkts for the day: 2 are: 1227 	
+Pkts for the day: 3 are: 1430 	
+Pkts for the day: 4 are: 1403 	
+Pkts for the day: 5 are: 530 	
+Pkts for the day: 6 are: 54 	
+Pkts for the day: 7 are: 233 	
+Pkts for the day: 8 are: 256 	
+Pkts for the day: 9 are: 254 	
+Pkts for the day: 10 are: 250 	
+Pkts for the day: 11 are: 186 	
+Pkts for the day: 12 are: 44 	
+Pkts for the day: 13 are: 45 	
+Pkts for the day: 14 are: 2 	
+Day average: 525  
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF11BW125
+Pkts for the day: 1 are: 1 	
+Pkts for the day: 2 are: 1 	
+Pkts for the day: 3 are: 25 	
+Pkts for the day: 4 are: 9 	
+Day average: 9  
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+ Month: November
+ SF: SF12BW125
+Pkts for the day: 1 are: 922 	
+Pkts for the day: 2 are: 1022 	
+Pkts for the day: 3 are: 730 	
+Pkts for the day: 4 are: 759 	
+Pkts for the day: 5 are: 426 	
+Pkts for the day: 6 are: 294 	
+Pkts for the day: 7 are: 305 	
+Pkts for the day: 8 are: 315 	
+Pkts for the day: 9 are: 217 	
+Pkts for the day: 10 are: 144 	
+Pkts for the day: 11 are: 143 	
+Pkts for the day: 12 are: 276 	
+Pkts for the day: 13 are: 322 	
+Pkts for the day: 14 are: 209 	
+Day average: 434  
+
+
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF7BW125
+Pkts for the day: 22 are: 2 	
+Day average: 2 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF8BW125
+Pkts for the day: 22 are: 1 	
+Day average: 1 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF9BW125
+Pkts for the day: 22 are: 2 	
+Day average: 2 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF9BW125
+Pkts for the day: 22 are: 2 	
+Day average: 2 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF11BW125
+Pkts for the day: 22 are: 2 	
+Day average: 2 
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+ Month: August
+ SF: SF12BW125
+Pkts for the day: 22 are: 3948 	
+Pkts for the day: 23 are: 11395 	
+Pkts for the day: 24 are: 12165 	
+Pkts for the day: 25 are: 4036 	
+Pkts for the day: 26 are: 6280 	
+Pkts for the day: 27 are: 8221 	
+Pkts for the day: 28 are: 2048 	
+Pkts for the day: 29 are: 1478 	
+Pkts for the day: 30 are: 2430 	
+Pkts for the day: 31 are: 2498 	
+Day average: 5449 

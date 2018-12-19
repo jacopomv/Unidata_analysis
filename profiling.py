@@ -17,9 +17,11 @@ sizePkt=""
 datr=""
 typePKT=""
 datePKT=None
+month=None
+tot=0
 
-query_dict['query_GWToSF'] = q1.body
-query_dict['Spec_GW'] = q2.body
+query_dict['GWToSF'] = q1.body
+query_dict['SpecGW'] = q2.body
 query_dict['match_all'] = q3.body
 indexToquery="lora-device_packet-deduplication"
 doc_typeToQuery='device_packet'
@@ -44,17 +46,23 @@ def addToDict(dict, key, value):
     dict[key].append(value)
 
 def scanDoc():
-    global GW_id, Dev_id, Dev_eui, freq, sizePkt, datr, typePKT, response, datePKT
+    global GW_id, Dev_id, Dev_eui, freq, sizePkt, datr, typePKT, response, datePKT, month
     returnedQuery=queryDB()
 
     alba=datetime.strptime("00:00", '%H:%M')
     mattina=datetime.strptime("08:00", '%H:%M')
     sera=datetime.strptime("16:00", '%H:%M')
     notte=datetime.strptime("23:59", '%H:%M')
+    day=datetime.strptime("11-12", '%m-%d')
+    month=datetime.strptime("08", '%m')
 
-    fascia_mattina="MATTINA"
-    fascia_pome="POME"
-    fascia_notte="NOTTE"
+    fascia_mattina="Morning (00-08)"
+    fascia_pome="Afternoon (08-16)"
+    fascia_notte="Night (16-23)"
+    ex_day_labour="One single labour day"
+    ex_day_holy="One single holiday day"
+    ex_month="One single month"
+
 
     for field in returnedQuery['hits']['hits']:
         GW_id = str(field['_source']['gateway'])
@@ -67,28 +75,42 @@ def scanDoc():
         datePKT = datetime.strptime(field['_source']['created_at'],'%Y-%m-%dT%H:%M:%S.%fZ')
         date_format=datePKT.strftime("%b %d, %Y - %H:%M:%S")
 
+        datePKT_hour_min=datePKT.strptime(str(datePKT.hour)+":"+str(datePKT.minute),'%H:%M')
+        datePKT_day=str(datePKT.day)
+        datePKT_month=datePKT.strptime(str(datePKT.month), "%m")
+        datePKT_week=datePKT.strptime(str(datePKT.month), "%m")
+
+
 
         # print alba.hour
         # print mattina.hour
         # print datePKT.hour
         #print notte.hour
         #print notte.hour <datePKT.hour<mattina.hour
+        #print day4
+        #print datePKT
+        if month.month == datePKT.month:
+            try:
+                addToDict(response, datePKT_day, Dev_eui)
+            except KeyError, e:
+                response[datePKT_day] = [Dev_eui]
 
-        if alba.hour < datePKT.hour< mattina.hour :
-            try:
-                addToDict(response, fascia_mattina, Dev_id)
-            except KeyError, e:
-                response[fascia_mattina] = [Dev_id]
-        elif mattina.hour <datePKT.hour<sera.hour:
-            try:
-                addToDict(response, fascia_pome, Dev_id)
-            except KeyError, e:
-                response[fascia_pome] = [Dev_id]
-        elif sera.hour <datePKT.hour<notte.hour:
-            try:
-                addToDict(response, fascia_notte, Dev_id)
-            except KeyError, e:
-                response[fascia_notte] = [Dev_id]
+        # DIVION BY PART OF THE DAY
+        # if alba <= datePKT_hour_min<= mattina :
+        #     try:
+        #         addToDict(response, fascia_mattina, Dev_eui)
+        #     except KeyError, e:
+        #         response[fascia_mattina] = [Dev_eui]
+        # elif mattina <=datePKT_hour_min<=sera:
+        #     try:
+        #         addToDict(response, fascia_pome, Dev_eui)
+        #     except KeyError, e:
+        #         response[fascia_pome] = [Dev_eui]
+        # elif sera <=datePKT_hour_min<=notte:
+        #     try:
+        #         addToDict(response, fascia_notte, Dev_eui)
+        #     except KeyError, e:
+        #         response[fascia_notte] = [Dev_eui]
 
 
 
@@ -104,21 +126,38 @@ def scanDoc():
 
 #write out on a file in order to have a easy readable result
 def easyToRead(file_name):
+    global tot
     with open(file_name, "a+") as file:
-        file.write(" \n GW: %s \n Total size query: %i \n" % (GW_id,size))
-        for k,v in sorted(response.items()):
-            #file.write("Values for the key: %s are: %i , percentage of packets is: \t%s \n" % (k, len(response[k]), "{:.2%}".format(float(len(response[k]))/size)))
+        file.write(" \n GW: %s \n Total size query: %i \n Month: %s\n SF: %s\n" % (GW_id,size, month.strftime("%B"), datr))
+        for k, value in sorted(response.items(), key=lambda x:int(x[0])):
+            tot=tot+len(response[k])
+            file.write("Pkts for the day: %s are: %i \t\n" % (k, len(response[k])))#, "{:.2%}".format(float(len(response[k]))/size)))
             #file.write("DATR: %s,\n DEV ID: %s \n" % (k,v))
             #print "done!"
-            print "Values for the key: %s are: %i , percentage is: %s " % (k, len(response[k]), "{:.2%}".format(float(len(response[k]))/size))
+
+            print "Values for the key: %s are: %i " % (k, len(response[k]))#, "{:.2%}".format(float(len(response[k]))/size))
+
+        #file.write("Total packet analysed: %i \t\n" %(tot))
+        if len(response.keys()) is not 0:
+            file.write("Day average: %i \n" % (int(tot)/len(response.keys())))
+        else: file.write("Empty dictionary")
     file.close()
 
 def checkResult():
-    #response_d = sorted((value, key) for (key,value) in d.items())
-    sorted(response.keys())
-    #for key, value in sorted(response.iteritems(), key=lambda (k,v): (v,k)):
-    for key in response:
+    tot=0
+    #response_d = sorted((value, key) for (key,value) in response.items())
+    #sorted(response.keys())
+    print " \n GW: %s \n Total size query: %i \n Month: %s\n SF: %s" % (GW_id,size, month.strftime("%B"), datr)
+    for key, value in sorted(response.items(), key=lambda x:int(x[0])):
+        tot=tot+len(response[key])
+    #for key in response:
+        #print "sto per printare"
         print "%s: %s" % (key, len(response[key]))
+    if len(response.keys()) is not 0:
+        print "Media al giorno: %i " % (int(tot)/len(response.keys()))
+    else: print "Empty dictionary"
+    #, "{:.2%}".format(float(len(response[k]))/size))
+
     # print datePKT.hour
     # print type(datePKT)
     # for k in sort_response:
@@ -129,10 +168,14 @@ def checkResult():
 
 def main():
     global size, query_type
-    query_type = raw_input("Insert query type: ")
+    try:
+        query_type = raw_input("Insert query type: ")
+    except KeyError, e:
+        print "Invalid query type"
+
     size = input("Insert size of the query: ")
     scanDoc()
-    #easyToRead("Packet2dim.txt")
+    easyToRead("GWSF2Day.txt")
     checkResult()
 
 

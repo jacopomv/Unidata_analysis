@@ -1,0 +1,31 @@
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 50000 
+Values for the key: Afternoon (08-16) are: 14861	
+Values for the key: Morning (00-08) are: 16423	
+Values for the key: Night (16-23) are: 18716	
+ 
+ GW: 7276FF002E0616FD 
+ Total size query: 100000 
+Values for the key: Afternoon (08-16) are: 27815	
+Values for the key: Morning (00-08) are: 30250	
+Values for the key: Night (16-23) are: 35464	
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 50000 
+Values for the key: Afternoon (08-16) are: 17807	
+Values for the key: Morning (00-08) are: 16266	
+Values for the key: Night (16-23) are: 15927		
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 100000 
+Values for the key: Afternoon (08-16) are: 35390	
+Values for the key: Morning (00-08) are: 32195	
+Values for the key: Night (16-23) are: 32415	
+
+ 
+ GW: 1C497BEFFECAB36D 
+ Total size query: 150000 
+Values for the key: Afternoon (08-16) are: 35726	
+Values for the key: Morning (00-08) are: 32415	
+Values for the key: Night (16-23) are: 32619	
