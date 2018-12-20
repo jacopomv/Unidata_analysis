@@ -91,9 +91,9 @@ def scanDoc():
         #print datePKT
         if month.month == datePKT.month:
             try:
-                addToDict(response, datePKT_day, Dev_eui)
+                addToDict(response, GW_id, Dev_eui)
             except KeyError, e:
-                response[datePKT_day] = [Dev_eui]
+                response[GW_id] = [Dev_eui]
 
         # DIVION BY PART OF THE DAY
         # if alba <= datePKT_hour_min<= mattina :
@@ -148,7 +148,7 @@ def checkResult():
     #response_d = sorted((value, key) for (key,value) in response.items())
     #sorted(response.keys())
     print " \n GW: %s \n Total size query: %i \n Month: %s\n SF: %s" % (GW_id,size, month.strftime("%B"), datr)
-    for key, value in sorted(response.items(), key=lambda x:int(x[0])):
+    for key, value in sorted(response.items(), key=lambda x:x[0]):
         tot=tot+len(response[key])
     #for key in response:
         #print "sto per printare"
@@ -175,7 +175,7 @@ def main():
 
     size = input("Insert size of the query: ")
     scanDoc()
-    easyToRead("GWSF2Day.txt")
+    #easyToRead("GWSF2Day.txt")
     checkResult()
 
 

@@ -135,3 +135,20 @@ Pkts for the day: 29 are: 1478
 Pkts for the day: 30 are: 2430 	
 Pkts for the day: 31 are: 2498 	
 Day average: 5449 
+ 
+ GW: 70B3D54B13080000 
+ Total size query: 20 
+ Month: August
+ SF: SF7BW125
+Pkts for the day: 2 are: 20 	
+Day average: 20 
+ 
+ GW: 70B3D54B13080000 
+ Total size query: 20 
+ Month: August
+ SF: SF7BW125
+ 
+ GW: 70B3D54B13080000 
+ Total size query: 20 
+ Month: August
+ SF: SF7BW125
