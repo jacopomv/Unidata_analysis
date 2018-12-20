@@ -159,12 +159,12 @@ def plotRes():
 
     objects = ('SF7', 'SF8', 'SF9', 'SF10', 'SF11', 'SF12')
     y_pos = np.arange(len(objects))
-    performance = [9470,2,2,9352,0,1]
+    performance = [14381,61,53,14278,29,1087]
 
     plt.bar(y_pos, performance, align='center', alpha=0.8, color='b')
     plt.xticks(y_pos, objects)
     plt.ylabel('Users per SF')
-    plt.title('SF allocations for week 39 (24-30/09) for GW: 7276FF002E061491')
+    plt.title('SF allocations for month: September for GW: 7276FF002E061491')
     for i, v in enumerate(performance):
         plt.text(i, v+20, str(v), color='blue', fontweight='bold')
     plt.tight_layout()
@@ -185,7 +185,7 @@ def main():
 
         scanDoc()
         #writeToFile("GWSF2Day.txt")
-        printOutResult(week_dict)
+        printOutResult(month_dict)
 
 
 

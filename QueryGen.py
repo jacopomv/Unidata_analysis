@@ -22,7 +22,7 @@ q2 = Query("Spec_GW", {
         "constant_score" : {
             "filter" : {
                 "term" : {
-                    "gateway" : "58a0cbeffe014e4c"
+                    "gateway" : "7276ff002e061491"
                 }
             }
         }
