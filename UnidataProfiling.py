@@ -1,3 +1,10 @@
+"""
+
+ UnidataProfiling 0.2: profiling Unidata pakcets 
+ Entirely coded by Jacopo M. Valtorta
+
+"""
+
 import requests
 from elasticsearch import Elasticsearch
 from datetime import datetime
