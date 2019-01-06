@@ -1,11 +1,7 @@
 """
 
- UnidataProfiling 0.3: profiling Unidata packets
+ UnidataProfiling 0.2: profiling Unidata packets
  Entirely coded by Jacopo M. Valtorta
-
-# TODO: make modular the dictionary selection for the printOutResult module
-# TODO:
-
 
 """
 
@@ -14,10 +10,7 @@ from elasticsearch import Elasticsearch
 from datetime import datetime
 from QueryGen import q1, q2, q3
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
 import json
 import sys
 
@@ -28,7 +21,6 @@ month_dict={}
 week_dict={}
 day_dict={}
 
-
 #Query global variables
 es= Elasticsearch([{"host" : "192.168.92.101", "port" : 9200, "timeout" : 30}])
 query_type=""
@@ -36,8 +28,10 @@ query_size=0
 query_dict['GWToSF'] = q1.body
 query_dict['SpecGW'] = q2.body
 query_dict['match_all'] = q3.body
-indexToquery="lora-device_packet-pre_deduplication"#"lora-device_packet-deduplication"
-doc_typeToQuery='device_packet'
+#indexToquery="lora-device_packet-deduplication"
+#For testing
+indexToquery="lora-gateway_packet-push_data"
+doc_typeToQuery='gateway_packet'
 #Remember about query size: max is 500000
 # --- settings changed in the index 'lora-device_packet-deduplication'
 #with PUT lora-device_packet-deduplication/_settings
@@ -61,7 +55,6 @@ week=None
 hour=None
 day2year=None
 datePKT=None
-count=0
 
 
 
@@ -84,24 +77,24 @@ def addToDict(dict, key, value):
 
 # This func retrieve the fields from the json returned from the query in order to fulfill the profiling requests
 def scanDoc():
-    global count, GW_id, Dev_id, Dev_eui, freq, sizePkt, datr, typePKT, response_dict, datePKT, month, week, hour, day2year
+    global GW_id, Dev_id, Dev_eui, freq, sizePkt, datr, typePKT, response_dict, datePKT, month, week, hour, day2year
     #Call the query
     returnedQuery=queryDB()
 
     #scanning the json returned
     for field in returnedQuery['hits']['hits']:
-        GW_id = str(field['_source']['gateway'])
-        Dev_id = str(field['_source']['uid'])
-        try:
-            Dev_eui = str(field['_source']['dev_eui'])
-        except KeyError, er:
-            Dev_eui="null"
-            count=count+1
+        #GW_id = str(field['_source']['gateway'])
+        GW_id = str(field['_source']['gw_mac'])
 
-        freq = str(field['_source']['freq'])
-        sizePkt=str(field['_source']['size'])
-        datr = str(field['_source']['datr'])
-        typePKT = str(field['_source']['type'])
+        # Dev_id = str(field['_source']['uid'])
+        # Dev_eui = str(field['_source']['dev_eui'])
+        # freq = str(field['_source']['freq'])
+        # sizePkt=str(field['_source']['size'])
+        # datr = str(field['_source']['datr'])
+        # typePKT = str(field['_source']['type'])
+
+        id = str(field['_id'])
+
 
         #type: datetime
         datePKT = datetime.strptime(field['_source']['created_at'],'%Y-%m-%dT%H:%M:%S.%fZ')
@@ -115,27 +108,27 @@ def scanDoc():
         day2year=datePKT.strftime("%j") #day of the year
 
 
-
         #adding to dict in order to store data relatively on month, week and day of the pkt
-        if month in month_dict:
-            addToDict(month_dict, month, Dev_eui)
-        else:
-            month_dict[month] = [Dev_eui]
-
-        if week in week_dict:
-            addToDict(week_dict, week, Dev_eui)
-        else:
-            week_dict[week] = [Dev_eui]
-
-        if day2year in day_dict:
-            addToDict(day_dict, day2year, Dev_eui)
-        else:
-            day_dict[day2year] = [Dev_eui]
-
-        if datr in response_dict:
-            addToDict(response_dict, datr, Dev_eui)
-        else:
-            response_dict[datr] = [Dev_eui]
+        # if month in month_dict:
+        #     addToDict(month_dict, month, Dev_eui)
+        # else:
+        #     month_dict[month] = [Dev_eui]
+        #
+        # if week in week_dict:
+        #     addToDict(week_dict, week, Dev_eui)
+        # else:
+        #     week_dict[week] = [Dev_eui]
+        #
+        # if day2year in day_dict:
+        #     addToDict(day_dict, day2year, Dev_eui)
+        # else:
+        #     day_dict[day2year] = [Dev_eui]
+        #
+        if month == 11:
+            if GW_id in response_dict:
+                 addToDict(response_dict, GW_id, id)
+            else:
+                response_dict[GW_id] = [id]
 
 
 #Func writing result to file "file_name"
@@ -167,7 +160,6 @@ def printOutResult(dictionary):
     tot=0
     #Print to console the key-value pair ordered by
     #print"GW: %s and SF: %s\n" % (GW_id, datr)
-    print "GW: %s has Null dev_eui values are : %i, datr is: %s " % (GW_id,count, datr)
     #for key, value in sorted(dictionary.items(), key=lambda x:len(x[1]), reverse=True):
     for key, value in sorted(dictionary.items(), key=lambda x:x[0], reverse=False):
 
@@ -179,22 +171,19 @@ def printOutResult(dictionary):
 
 
 def plotRes():
-    global count, GW_id
 
-    objects = ('SF7', 'SF8', 'SF9', 'SF10', 'SF11', 'SF12', 'AVG Null')
+    objects = ('SF7', 'SF8', 'SF9', 'SF10', 'SF11', 'SF12')
     y_pos = np.arange(len(objects))
-    performance = [3694,0,0,69,30,2517,7703]
+    performance = [14381,61,53,14278,29,1087]
 
     plt.bar(y_pos, performance, align='center', alpha=0.8, color='b')
     plt.xticks(y_pos, objects)
     plt.ylabel('Users per SF')
-    plt.title('SF allocations for: 17/08 for GW: 1c497beffecab36d')
+    plt.title('SF allocations for month: September for GW: 7276FF002E061491')
     for i, v in enumerate(performance):
-        plt.text(i-0.20, v+130, str(v), color='blue', fontweight='bold')
-
+        plt.text(i, v+20, str(v), color='blue', fontweight='bold')
     plt.tight_layout()
-    #plt.show()
-    plt.savefig('./out/img/pre-dedupl/Plot-1c497beffecab36d-day.png')
+    plt.show()
 
 def main():
     global query_size, query_type
@@ -207,11 +196,13 @@ def main():
             query_type = str(sys.argv[2])
         except IndexError, er:
             print repr("Usage: arg1=query_size and arg2=query_type" )
+            #query_dict['GWToSF'] query_dict['SpecGW'] query_dict['match_all'] = q3.body
             exit(0)
 
         scanDoc()
         #writeToFile("GWSF2Day.txt")
-        printOutResult(day_dict)
+        printOutResult(response_dict)
+
 
 
 
