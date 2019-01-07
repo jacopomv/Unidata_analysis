@@ -183,18 +183,18 @@ def plotRes():
 
     objects = ('SF7', 'SF8', 'SF9', 'SF10', 'SF11', 'SF12', 'AVG Null')
     y_pos = np.arange(len(objects))
-    performance = [3694,0,0,69,30,2517,7703]
+    performance = [1582,0,0,833,0,68,370]
 
     plt.bar(y_pos, performance, align='center', alpha=0.8, color='b')
     plt.xticks(y_pos, objects)
     plt.ylabel('Users per SF')
-    plt.title('SF allocations for: 17/08 for GW: 1c497beffecab36d')
+    plt.title('SF allocations for: 27/10 for GW: 58a0cbeffe014e4c')
     for i, v in enumerate(performance):
-        plt.text(i-0.20, v+130, str(v), color='blue', fontweight='bold')
+        plt.text(i-0.20, v+(min(performance)*0.30), str(v), color='blue', fontweight='bold')
 
     plt.tight_layout()
     #plt.show()
-    plt.savefig('./out/img/pre-dedupl/Plot-1c497beffecab36d-day.png')
+    plt.savefig('./out/img/pre-dedupl/Plot-58a0cbeffe014e4c-day.png')
 
 def main():
     global query_size, query_type
