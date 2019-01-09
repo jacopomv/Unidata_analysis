@@ -1,4 +1,4 @@
-GATEWAY_PACKET
+"GATEWAY_PACKET"
 {
   "_index": "lora-gateway_packet-pull_resp",
   "_type": "gateway_packet",
