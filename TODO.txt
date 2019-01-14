@@ -1,0 +1,23 @@
+RADIO profiler (WP4) ---> specifiche, WP teorico
+--> ED che conosco e ED che non conosco
+--> ED fissi, ED mobili
+--> devo creare un scenario vero, dai pacchetti che conosco e non conosco
+--> tipi di oggetti (federato, controllato, alieno)
+--> oggetti che puoi controllare e non
+--> oggetti federati e non
+--> analisi, teorica, cosa ci serve?
+--> cosa voglio sapere sul device
+--> sistematici, occasionali
+--> volume dati,
+--> mobile, non mobile
+--> tipo applicazione,
+--> reattivi, predittivo
+--> payload, time on air, packet loss, canale radio
+--> comportamentale, analisi work load
+--> analisi uso radio
+--> profilatura work load
+--> profilatura radioPer ogni ED, tirare il massimo numero di feature, anche 100, metterlo in una matrice e poi clusterizzare
+attenzione che quando un ED vede più o meno gateway, questo può dipendere dal fatto che i gateway vengono accesi spenti a caso, gateway messo nel mondo dei modem domestici
+analisi del perchè ci interessa la profilatura, serve al controller per ottimizzare,
+posizione solo attraverso SNR o RSSI
+informazioni per planning, spazio copertura radio, copertura geografica

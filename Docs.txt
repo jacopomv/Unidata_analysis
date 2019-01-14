@@ -1,0 +1,19 @@
+### ELASTICSEARCH-DSL ####
+Q("multi_match", query='python django', fields=['title', 'body'])
+
+Q("match", title='python') | Q("match", title='django')
+# {"bool": {"should": [...]}}
+
+Q("match", title='python') & Q("match", title='django')
+# {"bool": {"must": [...]}}
+
+~Q("match", title="python")
+# {"bool": {"must_not": [...]}}
+
+For debugging purposes you can serialize the Search object to a dict explicitly:
+print(s.to_dict())
+
+To set query parameters, use the .params() method:
+
+for hit in s.scan():
+    print(hit.title)
